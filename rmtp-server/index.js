@@ -1,4 +1,7 @@
 const NodeMediaServer = require("node-media-server");
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const config = {
   rtmp: {
@@ -9,10 +12,10 @@ const config = {
     ping_timeout: 60,
   },
   http: {
-    port: 8000,
+    port: 8000 || process.env.API_PORT,
     allow_origin: "*",
   },
-};
+}; 
 
 var nms = new NodeMediaServer(config);
 nms.run();
