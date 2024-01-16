@@ -43,6 +43,6 @@ export const getChannels = async (_, res) => {
     });
   } catch (err) {
     console.log(err);
-    return res.status(500).message("Something went wrong");
+    return res.status(500).json("Something went wrong");
   }
 };
